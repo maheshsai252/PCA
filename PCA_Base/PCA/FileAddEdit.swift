@@ -22,6 +22,7 @@ struct FileAddEdit: View {
     }    // for camera
 
     @State private var isPresented: Bool = false
+    @State var isDocumentPickerPresented = false
     var config: PHPickerConfiguration  {    //  photoPicker
         var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
         config.filter = .images
@@ -112,18 +113,40 @@ struct FileAddEdit: View {
                                 .font(.system(size: 24.0))
                                 .foregroundColor(.blue)
                                 .padding(.top, 1)
-                            /*
-                             // codes to pick documents from Files
-                            */
+                                .onTapGesture {
+                                    isDocumentPickerPresented.toggle()
+                                }
+                                .sheet(isPresented: $isDocumentPickerPresented) {
+                                    // Pick Documents
+                                    DocumentPicker(pickerResult: $fileData.documents, added: $isDocumentPickerPresented, context: context)
+
+                                }
+                            
                         }.listRowSeparator(.hidden)
                         ScrollView(.horizontal) {
                             VStack {
-                                /*
-                                ForEach(
+                                ForEach(fileData.documents) { doc in
                                     HStack {
-                                        // codes to list documents with name & date
+                                        Image(systemName: "doc")
+                                        Text(doc.name ?? "")
+                                        Text(doc.date?.formatted() ?? "")
+                                        Button {
+                                            if let index = fileData.documents.firstIndex(of: doc) {
+//                                                fileData.temporaryStorage.append(doc.name ?? "")
+                                                fileData.documents.remove(at: index)
+                                                // Remove Immediately
+                                                DispatchQueue.global(qos: .background).async {
+                                                    FileManager.default.deleteFiles(fileNames: [doc.name ?? ""])
+                                                }
+                                                
+                                                }
+                                        } label: {
+                                            Image(systemName: "xmark.circle.fill")
+                                                .foregroundColor(.red)
+                                        }
                                     }
-                                */
+                                }
+                                    
                             }
                         }
                     } //Documents from Files
@@ -166,6 +189,7 @@ struct FileAddEdit: View {
             fileData.fileNotes = value.fileNotes ?? ""
             fileData.pickerResult = value.fileAttach ?? []
             fileData.updateFile = value
+            fileData.documents = value.docs?.allObjects as? [DocEnt] ?? []
         }
     }
 }

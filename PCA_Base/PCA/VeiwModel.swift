@@ -14,6 +14,8 @@ class FileViewModel: ObservableObject {
     @Published var isNewData = false
     @Published var updateFile : FileEnt!
     @Published var pickerResult: [String] = []
+    @Published var documents: [DocEnt] = [] // documents array
+
     @Published var selectedCate: CateEnt? = nil
     
     init() {
@@ -35,7 +37,7 @@ class FileViewModel: ObservableObject {
         }
     }
      
-    func DetailItem(fileItem: FileEnt){
+    func DetailItem(fileItem: FileEnt) {
         fileDate = fileItem.fileDate ?? Date()
         fileName = fileItem.fileName ?? ""
         fileNotes = fileItem.fileNotes ?? ""
@@ -44,9 +46,10 @@ class FileViewModel: ObservableObject {
         updateFile = fileItem
         pickerResult = fileItem.fileAttach.map({ $0 }) ?? []
         selectedCate = fileItem.fileCate
+        documents = fileItem.docs?.allObjects as? [DocEnt] ?? []
     }
     
-    func EditItem(fileItem: FileEnt){
+    func EditItem(fileItem: FileEnt) {
         fileDate = fileItem.fileDate ?? Date()
         fileName = fileItem.fileName ?? ""
         fileNotes = fileItem.fileNotes ?? ""
@@ -56,6 +59,7 @@ class FileViewModel: ObservableObject {
         updateFile = fileItem
         pickerResult = fileItem.fileAttach.map({ $0 }) ?? []
         selectedCate = fileItem.fileCate
+        documents = fileItem.docs?.allObjects as? [DocEnt] ?? [] // retrieve docs
     }
     
     private func createNewFile(context : NSManagedObjectContext) {
@@ -68,6 +72,7 @@ class FileViewModel: ObservableObject {
         newFile.id = id
         newFile.fileAttach = pickerResult
         newFile.fileCate = selectedCate
+        newFile.docs = NSSet(array: documents) // add docs
     }
     
     private func updateCurrentFile() {
@@ -78,6 +83,8 @@ class FileViewModel: ObservableObject {
         updateFile.id = id
         updateFile.fileAttach = pickerResult
         updateFile.fileCate = selectedCate
+        updateFile.docs = NSSet(array: documents)
+
     }
     
     private func resetData() {
@@ -89,6 +96,7 @@ class FileViewModel: ObservableObject {
         isNewData.toggle()
         updateFile = nil
         pickerResult = []
+        documents = []
     }
     
 }

@@ -14,7 +14,8 @@ struct FileDetail: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var segueFile  = File()
     @State var showingFileEdit = false
-
+    @State var selectedUrl: URL?
+    @State var openDoc = false
     let aFile: FileEnt
     var fileDateFormat: String {
         if let launchDate = aFile.fileDate {
@@ -61,13 +62,24 @@ struct FileDetail: View {
                     ScrollView(.horizontal) {
                         VStack {
                             HStack {
-                                /*
-                                ForEach
-                                    // code to list documents with name & date
-                                */
+                                ForEach(self.aFile.docs?.allObjects as? [DocEnt] ?? []) {doc in
+                                    
+                                    HStack {
+                                        Image(systemName: "doc.circle.fill")
+                                        Text(doc.name ?? "")
+                                        Text(doc.date?.formatted() ?? "")
+                                    }.onTapGesture {
+                                        openDoc = true
+                                        selectedUrl = URL.load(fileName: doc.name ?? "")
+                                    }
+                                    
+                                }
                             }
-                        }
+                        }.padding()
                     } //Documents from Files
+                    .sheet(isPresented: $openDoc) {
+                        DocumentOpener(selectedURL: $selectedUrl, open: $openDoc)
+                    }
 
                     Text("Notes")
                         .HeaderGray()

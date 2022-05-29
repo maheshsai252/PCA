@@ -9,3 +9,7 @@ import CoreData
 public class FileEnt: NSManagedObject {
 
 }
+//@objc(DocEnt)
+//public class DocEnt: NSManagedObject {
+//
+//}

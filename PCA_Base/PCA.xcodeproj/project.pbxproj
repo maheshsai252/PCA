@@ -34,6 +34,8 @@
 		7A10B396280AB57C00966486 /* FileEnt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10B390280AB57C00966486 /* FileEnt+CoreDataProperties.swift */; };
 		7A10B398280AB57C00966486 /* CateEnt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10B392280AB57C00966486 /* CateEnt+CoreDataClass.swift */; };
 		7A2418DF2810C60F0072CB64 /* TaskTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2418DE2810C60F0072CB64 /* TaskTexts.swift */; };
+		B165A1C0284163A6007B10FD /* DocOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B165A1BF284163A6007B10FD /* DocOpener.swift */; };
+		B19A52A0283EB5E40075099A /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A529F283EB5E40075099A /* DocumentPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		7A10B390280AB57C00966486 /* FileEnt+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileEnt+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A10B392280AB57C00966486 /* CateEnt+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CateEnt+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A2418DE2810C60F0072CB64 /* TaskTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTexts.swift; sourceTree = "<group>"; };
+		B165A1BF284163A6007B10FD /* DocOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocOpener.swift; sourceTree = "<group>"; };
+		B19A529F283EB5E40075099A /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				7A10B37A280AB4C600966486 /* MailView.swift */,
 				7A10B377280AB4C600966486 /* Pickers.swift */,
 				7A10B37D280AB4C700966486 /* UIImg+Extension.swift */,
+				B19A529F283EB5E40075099A /* DocumentPicker.swift */,
+				B165A1BF284163A6007B10FD /* DocOpener.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -217,7 +223,9 @@
 				7A2418DF2810C60F0072CB64 /* TaskTexts.swift in Sources */,
 				7A10B387280AB4C700966486 /* DetailImageView.swift in Sources */,
 				7A10B30F280AACB800966486 /* PCA.xcdatamodeld in Sources */,
+				B165A1C0284163A6007B10FD /* DocOpener.swift in Sources */,
 				7A10B370280AB49600966486 /* FileDetail.swift in Sources */,
+				B19A52A0283EB5E40075099A /* DocumentPicker.swift in Sources */,
 				7A10B36D280AB49600966486 /* VeiwModel.swift in Sources */,
 				7A10B36C280AB49600966486 /* FileAddEdit.swift in Sources */,
 				7A10B30C280AACB800966486 /* Persistence.swift in Sources */,
@@ -369,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PCA/Preview Content\"";
-				DEVELOPMENT_TEAM = CJMMB2KSR7;
+				DEVELOPMENT_TEAM = 23LBXQWLYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -382,7 +390,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benbison.PCA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maheshsai.PCA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -398,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PCA/Preview Content\"";
-				DEVELOPMENT_TEAM = CJMMB2KSR7;
+				DEVELOPMENT_TEAM = 23LBXQWLYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -411,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benbison.PCA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maheshsai.PCA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,6 +1,6 @@
-//
+
 //  CateEnt+CoreDataClass.swift
-//
+
 
 import Foundation
 import CoreData

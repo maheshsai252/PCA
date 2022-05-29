@@ -20,21 +20,21 @@ extension CateEnt {
 }
 
 // MARK: Generated accessors for cateFile
-extension CateEnt {
-
-    @objc(addCateFileObject:)
-    @NSManaged public func addToCateFile(_ value: FileEnt)
-
-    @objc(removeCateFileObject:)
-    @NSManaged public func removeFromCateFile(_ value: FileEnt)
-
-    @objc(addCateFile:)
-    @NSManaged public func addToCateFile(_ values: NSSet)
-
-    @objc(removeCateFile:)
-    @NSManaged public func removeFromCateFile(_ values: NSSet)
-
-}
+//extension CateEnt {
+//
+//    @objc(addCateFileObject:)
+//    @NSManaged public func addToCateFile(_ value: FileEnt)
+//
+//    @objc(removeCateFileObject:)
+//    @NSManaged public func removeFromCateFile(_ value: FileEnt)
+//
+//    @objc(addCateFile:)
+//    @NSManaged public func addToCateFile(_ values: NSSet)
+//
+//    @objc(removeCateFile:)
+//    @NSManaged public func removeFromCateFile(_ values: NSSet)
+//
+//}
 
 extension CateEnt : Identifiable {
 
